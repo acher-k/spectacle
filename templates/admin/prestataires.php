@@ -18,7 +18,7 @@ $prestataires = $stm->fetchAll();
 
 ?>
 
-<h1>Types</h1>
+<h1>Prestataires</h1>
 <div>
 
 
@@ -45,7 +45,7 @@ $prestataires = $stm->fetchAll();
                             <?php (isset($Err['name'])) ? printError($_SESSION['error']['name']) : null ?>
 
                         </td>
-                        <td>
+                        <td class="w-25">
                             <textarea class="form-control" name="description" id="description" cols="30" rows="6" maxlength="65535"></textarea>
                             <?php (isset($Err['description'])) ? printError($_SESSION['error']['description']) : null ?>
 
