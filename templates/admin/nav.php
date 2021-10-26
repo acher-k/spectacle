@@ -4,12 +4,12 @@
             <svg class="bi me-2" width="40" height="32">
                 <use xlink:href="#bootstrap"></use>
             </svg>
-            <span class="fs-4">Sidebar</span>
+            <span class="fs-4">Admin</span>
         </a>
         <hr>
         <ul class="nav nav-pills flex-column mb-auto">
             <li class="nav-item">
-                <a href="#" class="nav-link text-white
+                <a href="/spectacle/admin" class="nav-link text-white
                  <?php if (!isset($_GET['page'])) {
                         echo 'active';
                     } ?>

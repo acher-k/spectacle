@@ -12,7 +12,7 @@ if ($_SERVER['HTTP_REFERER'] == 'http://localhost/spectacle/admin/') {
 
         // nettoyage
         $eventType = htmlentities($_POST['type']);
-        $eventDescription = htmlentities($_POST['description']);
+        $typeDescription = htmlentities($_POST['description']);
 
         //validation
         $validation = true;
@@ -21,7 +21,7 @@ if ($_SERVER['HTTP_REFERER'] == 'http://localhost/spectacle/admin/') {
             $validation = false;
             $errorNotification['type'] = 'Champ obligatoire avec maximum 70 caractères !';
         }
-        if (empty($eventDescription) || strlen($eventType) > 65535) {
+        if (empty($typeDescription) || strlen($typeDescription) > 65535) {
             $validation = false;
             $errorNotifications['description'] = 'Champ  avec maximum 65535 caractères !';
         }
@@ -29,7 +29,7 @@ if ($_SERVER['HTTP_REFERER'] == 'http://localhost/spectacle/admin/') {
         if ($validation) {
             $stm = $db->prepare('INSERT INTO spectacle_type ( type, description) VALUES (:type, :description)');
             $stm->bindParam(':type', $eventType);
-            $stm->bindParam(':description', $eventDescription);
+            $stm->bindParam(':description', $typeDescription);
             $stm->execute();
         }
     }
