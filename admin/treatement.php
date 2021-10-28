@@ -1,7 +1,7 @@
 <?php
 require_once('../config/database.php');
 
-if ($_SERVER['HTTP_REFERER'] == 'http://localhost/spectacle/admin/') {
+if ($_SERVER['HTTP_REFERER'] == 'http://localhost/spectacle/admin/?page=types') {
     //suppression
     if (isset($_GET['delete']) && $_GET['delete'] >= 0) {
         $id = (int)$_GET['delete'];
@@ -33,7 +33,7 @@ if ($_SERVER['HTTP_REFERER'] == 'http://localhost/spectacle/admin/') {
             $stm->execute();
         }
     }
-    header('location: /spectacle/admin');
+    header('location: /spectacle/admin/?page=types');
 } else {
     echo $_SERVER['HTTP_REFERER'];
 
